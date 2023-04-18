@@ -19,9 +19,13 @@ import Coffee from './Page/shop/Coffee/Coffee';
 import ColdBrew from './Page/shop/ColdBrew/ColdBrew';
 import Gear from './Page/shop/Gear/Gear';
 import ForgetPassword from './Page/ForgetPassword';
+import AccountATLogin from './Page/AccountATLogin';
 import { Provider } from 'react-redux';
 import { store, persistor } from './store';
 import { PersistGate } from 'redux-persist/integration/react';
+import Orders from './Page/Orders';
+import Profile from './Page/Profile';
+import Resetpassword from './Page/Resetpassword';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -48,6 +52,11 @@ root.render(
               <Route path="search" element={<Search />} />
               <Route path="register" element={<Register />} />
               <Route path="forgetpassword" element={<ForgetPassword />} />
+              <Route path="accountAFlogin" element={<AccountATLogin />}>
+                <Route path="orders" element={<Orders/>}></Route>
+                <Route path="profile" element={<Profile/>}></Route>
+              </Route>
+              <Route path="resetpassword" element={<Resetpassword/>}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

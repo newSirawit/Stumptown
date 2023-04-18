@@ -1,5 +1,11 @@
 export const ProductCoffee = [
     {
+        name:"Vivid Bloom",
+        price:23,
+        category:"BLEND",
+        img:"https://stumptown-shop.imgix.net/products/VividBloomPDP.png?v=1678817566?w=360&auto=format,compress",
+    },
+    {
         name:"Ecuador Fausto Romo",
         price:38,
         category:"SINGLE ORIGIN",

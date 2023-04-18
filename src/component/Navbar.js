@@ -5,7 +5,8 @@ import axios from "axios";
 import Popup from "reactjs-popup";
 import Modal from "react-modal";
 import { useSelector,useDispatch } from "react-redux";
-import { increment,decrement,setCart,removeItem,addQuantity,} from "../slice/cartslice";
+import { increment,decrement,setCart,removeItem,addQuantity} from "../slice/cartslice";
+import { logout} from "../slice/user";
 Modal.setAppElement("#root");
 const Navbar = () => {
     const [data, setData] = useState(null)
@@ -182,7 +183,7 @@ const Navbar = () => {
                         </Popup>
                     </div>
                     <Link to="findyourmatch" className="h-[42px] border-2 border-black flex justify-center items-center px-[24px] pt-[9px] pb-[11px]">Find Your Match</Link>
-                    <Link to="search" className="mx-[35px]"><MdSearch className="w-6 h-6"/></Link>
+                    <button to="search" onClick={() => dispatch(logout())} className="mx-[35px]"><MdSearch className="w-6 h-6"/></button>
                     <Link to="account" className="mr-[35px]"><img className="w-5 h-5" src="http://homemade-nieruchomosci.pl/wp-content/themes/homemade/img/contact.png"/></Link>
                     <button onClick={() => showCart()}><img className="w-5 h-5" src="https://uxwing.com/wp-content/themes/uxwing/download/e-commerce-currency-shopping/shopping-cart-icon.png"/>
                             <div className="w-4 h-4 flex justify-center items-center font-bold border border-black rounded-full bg-red-500 text-[12px] absolute top-5 right-[30px] text-white">{cart.totalitem}</div>

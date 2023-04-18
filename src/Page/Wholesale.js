@@ -6,24 +6,12 @@ import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 
 const Wholesale = () => {
-    // const A = {A:1,B:2,C:3}
-    // const B = {A:4,B:5,C:6}
-    const array = [
-        {A:5,B:2},
-        {A:3,B:2},
-        {A:2,B:2},
-        {A:2,B:3}
-    ]
-    let total = 0
-    let item = 0
-    array.map(s => item++)
-    // console.log(item)
-    // console.log(array)
+    const [isHover, setIsHover] = useState(false)
     return(
 
         <>
         <div className="pt-[200px] flex justify-center">
-            <button className="bg-yellow-300 border-black active:bg-orange-400">Lo Lo Test</button>
+            <button className={`bg-yellow-300 border border-black w-20 h-10 mb-10 ${isHover ? "bg-black text-white" :null }`} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>Lo Lo Test</button>
         </div>
         </> 
     )
